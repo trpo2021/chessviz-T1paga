@@ -1,11 +1,11 @@
 g = g++
 pars = -c -Wall -Werror
 file1 = src/chessviz/main.cpp
-file2 = src/libchessviz/chesfun.cpp
+file2 = src/chessviz/board.cpp
 files = $(file1) $(file2)
 binary = bin/main
 object1 = obj/src/chessviz/main.o
-object2 = obj/src/libchessviz/board.o
+object2 = obj/src/chessviz/board.o
 objects = $(object1) $(object2)
 
 all: $(binary) clean
@@ -25,4 +25,4 @@ test: all
 no-rm: $(binary)
 
 clean:
-	rm obj/chessviz/*.o rm obj/libchessviz/*.o
+	rm obj/src/chessviz/*.o 
