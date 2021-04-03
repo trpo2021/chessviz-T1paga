@@ -1,5 +1,5 @@
-#include "board.hpp"
 #include <iostream>
+#include <libchessviz/board.h>
 #include <stdlib.h>
 #include <string.h>
 
