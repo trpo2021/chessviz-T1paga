@@ -8,7 +8,6 @@ object1 = obj/src/chessviz/main.o
 object2 = obj/src/chessviz/board.o
 objects = $(object1) $(object2)
 
-all: $(binary) clean
 
 $(object1): $(file1)
 	$(g) $(pars) $^ -o $@
@@ -23,6 +22,8 @@ test: all
 	./bin/main
 
 no-rm: $(binary)
+
+.PHONY: clean
 
 clean:
 	rm obj/src/chessviz/*.o 
