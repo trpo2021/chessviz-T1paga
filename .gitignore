@@ -1,2 +1,5 @@
+*.a
+*.d
 *.o
-main
+bin/chessviz
+

@@ -19,7 +19,9 @@ void ChessField(char pole[][9])
 void Move(char pole[][9])
 {
     int i1 = 9, i2 = 9, j1 = 0, j2 = 0;
+
     string step;
+
     cout << endl << "Input your move: ";
     getline(cin, step);
     if (step == "exit") {
