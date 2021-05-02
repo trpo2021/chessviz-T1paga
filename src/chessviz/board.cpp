@@ -162,4 +162,3 @@ void Move(char pole[][9])
     cout << endl;
     cout << endl;
 }
-
