@@ -1,9 +1,4 @@
-#include "board.hpp"
-#include <iostream>
-#include <stdlib.h>
-#include <string.h>
-
-using namespace std;
+#include "board.h"
 
 int main()
 {
@@ -16,11 +11,11 @@ int main()
                {'3', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
                {'2', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
                {'1', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
-               {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'}};
-
+               {' ', 'a', '6', 'c', 'd', 'e', 'f', 'g', 'h'}};
+    int team = 0;
     ChessField(pole);
     while (true) {
-        Move(pole);
+        Move(pole, &team);
         ChessField(pole);
     }
     return 0;
