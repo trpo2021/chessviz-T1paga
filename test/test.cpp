@@ -1,5 +1,5 @@
-#include "../src/board.hpp"
-#include "ctest.h"
+#include "../src/chessviz/board.hpp"
+#include "ctest.hpp"
 #include <string>
 
 char pole[9][9]
@@ -25,7 +25,7 @@ CTEST(W_Peshka, Correct_P_forward2cell)
     int i1 = 6, j1 = 5, i2 = 4, j2 = 5;
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(W_Peshka, Correct_P_attack)
 {
@@ -34,7 +34,7 @@ CTEST(W_Peshka, Correct_P_attack)
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[5][5] = ' ';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(B_Peshka, Correct_p_forward1cell)
@@ -42,14 +42,14 @@ CTEST(B_Peshka, Correct_p_forward1cell)
     int i1 = 1, j1 = 5, i2 = 2, j2 = 5;
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(B_Peshka, Correct_p_forward2cell)
 {
     int i1 = 1, j1 = 5, i2 = 3, j2 = 5;
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(B_Peshka, Correct_p_attack)
 {
@@ -58,7 +58,7 @@ CTEST(B_Peshka, Correct_p_attack)
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[2][4] = 'R';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(W_Rook, Correct_R_left)
@@ -68,7 +68,7 @@ CTEST(W_Rook, Correct_R_left)
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[6][1] = 'P';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(W_Rook, Correct_R_right)
 {
@@ -77,7 +77,7 @@ CTEST(W_Rook, Correct_R_right)
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[6][8] = 'P';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(B_Rook, Correct_r_left)
@@ -87,7 +87,7 @@ CTEST(B_Rook, Correct_r_left)
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[1][2] = 'p';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(B_Rook, Correct_r_right)
 {
@@ -96,7 +96,7 @@ CTEST(B_Rook, Correct_r_right)
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[1][8] = 'P';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(W_Horse, Correct_H_left)
@@ -104,14 +104,14 @@ CTEST(W_Horse, Correct_H_left)
     int i1 = 7, j1 = 2, i2 = 5, j2 = 3;
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(W_Horse, Correct_H_right)
 {
     int i1 = 7, j1 = 7, i2 = 5, j2 = 6;
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(B_Horse, Correct_h_left)
@@ -119,14 +119,14 @@ CTEST(B_Horse, Correct_h_left)
     int i1 = 0, j1 = 2, i2 = 2, j2 = 3;
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(B_Horse, Correct_h_right)
 {
     int i1 = 0, j1 = 7, i2 = 2, j2 = 6;
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(W_Bishop, Correct_B_left)
@@ -136,7 +136,7 @@ CTEST(W_Bishop, Correct_B_left)
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[6][4] = 'P';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(W_Bishop, Correct_B_right)
 {
@@ -145,7 +145,7 @@ CTEST(W_Bishop, Correct_B_right)
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[6][5] = 'P';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(B_Bishop, Correct_b_left)
@@ -155,7 +155,7 @@ CTEST(B_Bishop, Correct_b_left)
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[1][4] = 'p';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(B_Bishop, Correct_b_right)
 {
@@ -164,7 +164,7 @@ CTEST(B_Bishop, Correct_b_right)
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[1][5] = 'p';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(W_Queen, Correct_Q)
@@ -174,7 +174,7 @@ CTEST(W_Queen, Correct_Q)
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[6][4] = 'P';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(B_Queen, Correct_q)
 {
@@ -183,7 +183,7 @@ CTEST(B_Queen, Correct_q)
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[1][4] = 'p';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(W_King, Correct_K)
@@ -193,7 +193,7 @@ CTEST(W_King, Correct_K)
     int result = MoveCheck(0, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[6][5] = 'P';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }
 CTEST(B_King, Correct_k)
 {
@@ -202,5 +202,5 @@ CTEST(B_King, Correct_k)
     int result = MoveCheck(1, i1, i2, j1, j2, pole);
     int expected = 1;
     pole[1][5] = 'p';
-    EXPECT_EQ(expected, result);
+    ASSERT_EQUAL(expected, result);
 }

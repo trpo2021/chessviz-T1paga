@@ -1,6 +1,6 @@
 #define CTEST_MAIN
 
-#include <ctest.h>
+#include <ctest.hpp>
 
 int main(int argc, const char** argv)
 {
