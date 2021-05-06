@@ -482,7 +482,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             return 0;
 
         case 'P':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if ((j1 == j2) && (i1 - i2 == 1) && (pole[i2][j2] == ' '))
                     d = 1;
                 if ((j1 == j2) && (i1 - i2 == 2) && (i1 == 6)
@@ -502,7 +502,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'R':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if ((j1 == j2) && (i1 != i2)) {
                     if (i1 > i2) {
                         for (int i = i1 - 1; i > i2; i--) {
@@ -551,7 +551,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'N':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if (((i2 == i1 - 2) && (j2 == j1 + 1))
                     || ((i2 == i1 - 2) && (j2 == j1 - 1))
                     || ((i2 == i1 + 2) && (j2 == j1 + 1))
@@ -566,7 +566,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'B':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if ((j2 < j1) && (i2 < i1)) {
                     if (j1 - j2 == i1 - i2) {
                         for (int i = j1 - 1, v = i1 - 1; i > j2 && v > i2;
@@ -623,7 +623,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'Q':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 /// Ëàäüÿ//////////////////////////////////
                 if ((j1 == j2) && (i1 != i2)) {
                     if (i1 > i2) {
@@ -726,7 +726,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'K':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if (((j2 - j1 >= -1) && (j2 - j1 <= 1))
                     && ((i2 - i1 >= -1) && (i2 - i1 <= 1))) {
                     if ((AttackArea(team, 1, i2, j2, pole) == 1)
@@ -756,7 +756,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             return 0;
 
         case 'p':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if ((j1 == j2) && (i2 - i1 == 1) && (pole[i2][j2] == ' '))
                     d = 1;
                 if ((j1 == j2) && (i2 - i1 == 2) && (i1 == 1)
@@ -776,7 +776,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'r':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if ((j1 == j2) && (i1 != i2)) {
                     if (i1 > i2) {
                         for (int i = i1 - 1; i > i2; i--) {
@@ -825,7 +825,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'n':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if (((i2 == i1 - 2) && (j2 == j1 + 1))
                     || ((i2 == i1 - 2) && (j2 == j1 - 1))
                     || ((i2 == i1 + 2) && (j2 == j1 + 1))
@@ -840,7 +840,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'b':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if ((j2 < j1) && (i2 < i1)) {
                     if (j1 - j2 == i1 - i2) {
                         for (int i = j1 - 1, v = i1 - 1; i > j2 && v > i2;
@@ -897,7 +897,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'q':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 /// Ëàäüÿ//////////////////////////////////
                 if ((j1 == j2) && (i1 != i2)) {
                     if (i1 > i2) {
@@ -1000,7 +1000,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
             break;
 
         case 'k':
-            if (FriendlyFire(team, i2, j2, pole) == 1) {
+            if (FriendlyFire(team, i2, j2, pole) == 3) {
                 if (((j2 - j1 >= -1) && (j2 - j1 <= 1))
                     && ((i2 - i1 >= -1) && (i2 - i1 <= 1))) {
                     if ((AttackArea(team, 1, i2, j2, pole) == 1)
@@ -1242,7 +1242,7 @@ int AttackArea(int team, int area, int i2, int j2, char pole[][9])
 
 int FriendlyFire(int side, int i2, int j2, char pole[][9])
 {
-    int d = 1;
+    int d = 3;
     switch (side) {
     case 0:
         if ((pole[i2][j2] == 'P') || (pole[i2][j2] == 'R')
@@ -1250,7 +1250,7 @@ int FriendlyFire(int side, int i2, int j2, char pole[][9])
             || (pole[i2][j2] == 'Q') || (pole[i2][j2] == 'K')) {
             cout << "\n ERROR: You can't move your figure on your figures \n "
                     "\n";
-            d = 0;
+            d = 2;
         }
         break;
     case 1:
@@ -1259,7 +1259,7 @@ int FriendlyFire(int side, int i2, int j2, char pole[][9])
             || (pole[i2][j2] == 'q') || (pole[i2][j2] == 'k')) {
             cout << "\n ERROR: You can't move your figure on your figures \n "
                     "\n";
-            d = 0;
+            d = 2;
         }
         break;
     }
