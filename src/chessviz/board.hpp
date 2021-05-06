@@ -1,5 +1,5 @@
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef BOARD_HPP
+#define BOARD_HPP
 
 #include <iomanip>
 #include <iostream>
@@ -16,4 +16,3 @@ int FriendlyFire(int side, int i2, int j2, char pole[][9]);
 int AttackArea(int team, int area, int i2, int j2, char pole[][9]);
 
 #endif
-
