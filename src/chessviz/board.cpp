@@ -1,6 +1,9 @@
 #include "board.hpp"
+
 using namespace std;
+
 int kcount = 0, Kcount = 0;
+
 void ChessField(char pole[][9])
 {
     for (int i = 0; i < 9; i++) {
@@ -10,6 +13,7 @@ void ChessField(char pole[][9])
         cout << endl;
     }
 }
+
 void Move(char pole[][9], int* team)
 {
     int i1 = 9, i2 = 9, j1 = 0, j2 = 0;
@@ -388,10 +392,10 @@ void Move(char pole[][9], int* team)
                 }
             }
             if ((AttackArea(*team, 1, ib, vb, pole) == 0)
-                 (AttackArea(*team, 2, ib, vb, pole) == 0)
-                 (AttackArea(*team, 3, ib, vb, pole) == 0)
-                 (AttackArea(*team, 4, ib, vb, pole) == 0)
-                 (AttackArea(*team, 5, ib, vb, pole) == 0)) {
+                || (AttackArea(*team, 2, ib, vb, pole) == 0)
+                || (AttackArea(*team, 3, ib, vb, pole) == 0)
+                || (AttackArea(*team, 4, ib, vb, pole) == 0)
+                || (AttackArea(*team, 5, ib, vb, pole) == 0)) {
                 pole[i1][j1] = pole[i2][j2];
                 pole[i2][j2] = memmory;
                 cout << "\n ERROR: Your king is under attack \n \n";
@@ -408,10 +412,10 @@ void Move(char pole[][9], int* team)
                 }
             }
             if ((AttackArea(*team, 1, ib, vb, pole) == 0)
-                 (AttackArea(*team, 2, ib, vb, pole) == 0)
-                 (AttackArea(*team, 3, ib, vb, pole) == 0)
-                 (AttackArea(*team, 4, ib, vb, pole) == 0)
-                 (AttackArea(*team, 5, ib, vb, pole) == 0)) {
+                || (AttackArea(*team, 2, ib, vb, pole) == 0)
+                || (AttackArea(*team, 3, ib, vb, pole) == 0)
+                || (AttackArea(*team, 4, ib, vb, pole) == 0)
+                || (AttackArea(*team, 5, ib, vb, pole) == 0)) {
                 pole[i1][j1] = pole[i2][j2];
                 pole[i2][j2] = memmory;
                 cout << "\n ERROR: Your king is under attack \n \n";
@@ -462,6 +466,7 @@ void Move(char pole[][9], int* team)
     cout << endl;
     cout << endl;
 }
+
 int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
 {
     int d = 0;
@@ -548,13 +553,13 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
         case 'N':
             if (FriendlyFire(team, i2, j2, pole) == 1) {
                 if (((i2 == i1 - 2) && (j2 == j1 + 1))
-                     ((i2 == i1 - 2) && (j2 == j1 - 1))
-                     ((i2 == i1 + 2) && (j2 == j1 + 1))
-                     ((i2 == i1 + 2) && (j2 == j1 - 1))
-                     ((i2 == i1 - 1) && (j2 == j1 + 2))
-                     ((i2 == i1 - 1) && (j2 == j1 - 2))
-                     ((i2 == i1 + 1) && (j2 == j1 + 2))
-                     ((i2 == i1 + 1) && (j2 == j1 - 2))) {
+                    || ((i2 == i1 - 2) && (j2 == j1 - 1))
+                    || ((i2 == i1 + 2) && (j2 == j1 + 1))
+                    || ((i2 == i1 + 2) && (j2 == j1 - 1))
+                    || ((i2 == i1 - 1) && (j2 == j1 + 2))
+                    || ((i2 == i1 - 1) && (j2 == j1 - 2))
+                    || ((i2 == i1 + 1) && (j2 == j1 + 2))
+                    || ((i2 == i1 + 1) && (j2 == j1 - 2))) {
                     d = 1;
                 }
             }
@@ -619,6 +624,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
 
         case 'Q':
             if (FriendlyFire(team, i2, j2, pole) == 1) {
+                /// Ëàäüÿ//////////////////////////////////
                 if ((j1 == j2) && (i1 != i2)) {
                     if (i1 > i2) {
                         for (int i = i1 - 1; i > i2; i--) {
@@ -663,6 +669,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
                         d = 1;
                     }
                 }
+                ///Ñëîí//////////////////////////////////////////////
                 if ((j2 < j1) && (i2 < i1)) {
                     if (j1 - j2 == i1 - i2) {
                         for (int i = j1 - 1, v = i1 - 1; i > j2 && v > i2;
@@ -820,13 +827,13 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
         case 'n':
             if (FriendlyFire(team, i2, j2, pole) == 1) {
                 if (((i2 == i1 - 2) && (j2 == j1 + 1))
-                     ((i2 == i1 - 2) && (j2 == j1 - 1))
-                     ((i2 == i1 + 2) && (j2 == j1 + 1))
-                     ((i2 == i1 + 2) && (j2 == j1 - 1))
-                     ((i2 == i1 - 1) && (j2 == j1 + 2))
-                     ((i2 == i1 - 1) && (j2 == j1 - 2))
-                     ((i2 == i1 + 1) && (j2 == j1 + 2))
-                     ((i2 == i1 + 1) && (j2 == j1 - 2))) {
+                    || ((i2 == i1 - 2) && (j2 == j1 - 1))
+                    || ((i2 == i1 + 2) && (j2 == j1 + 1))
+                    || ((i2 == i1 + 2) && (j2 == j1 - 1))
+                    || ((i2 == i1 - 1) && (j2 == j1 + 2))
+                    || ((i2 == i1 - 1) && (j2 == j1 - 2))
+                    || ((i2 == i1 + 1) && (j2 == j1 + 2))
+                    || ((i2 == i1 + 1) && (j2 == j1 - 2))) {
                     d = 1;
                 }
             }
@@ -891,6 +898,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
 
         case 'q':
             if (FriendlyFire(team, i2, j2, pole) == 1) {
+                /// Ëàäüÿ//////////////////////////////////
                 if ((j1 == j2) && (i1 != i2)) {
                     if (i1 > i2) {
                         for (int i = i1 - 1; i > i2; i--) {
@@ -935,6 +943,7 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
                         d = 1;
                     }
                 }
+                ///Ñëîí//////////////////////////////////////////////
                 if ((j2 < j1) && (i2 < i1)) {
                     if (j1 - j2 == i1 - i2) {
                         for (int i = j1 - 1, v = i1 - 1; i > j2 && v > i2;
@@ -1015,18 +1024,21 @@ int MoveCheck(int team, int i1, int i2, int j1, int j2, char pole[][9])
     }
     return d;
 }
+
 int AttackArea(int team, int area, int i2, int j2, char pole[][9])
 {
     int d = 1, v, f;
     switch (team) {
     case 0:
         switch (area) {
+        ///ïåøêà///////////////////////
         case 1:
             if ((pole[i2 - 1][j2 - 1] == 'p')
                 || (pole[i2 - 1][j2 + 1] == 'p')) {
                 d = 0;
             }
             break;
+        ///ëàäüÿ+êîðîëåâà////////
         case 2:
             v = j2;
             do {
@@ -1057,6 +1069,7 @@ int AttackArea(int team, int area, int i2, int j2, char pole[][9])
                 }
             } while (pole[v][j2] == ' ');
             break;
+        ///ñëîí+êîðîëåâà///////////
         case 3:
             f = i2;
             v = j2;
@@ -1095,17 +1108,19 @@ int AttackArea(int team, int area, int i2, int j2, char pole[][9])
                 }
             } while (pole[f][v] == ' ');
             break;
+        ///êîíü/////////////////////
         case 4:
             if ((pole[i2 + 1][j2 + 2] == 'n') || (pole[i2 + 1][j2 - 2] == 'n')
-                 (pole[i2 - 1][j2 + 2] == 'n')
-                 (pole[i2 - 1][j2 - 2] == 'n')
-                 (pole[i2 + 2][j2 + 1] == 'n')
-                 (pole[i2 + 2][j2 - 1] == 'n')
-                 (pole[i2 - 2][j2 + 1] == 'n')
-                 (pole[i2 - 2][j2 - 1] == 'n')) {
+                || (pole[i2 - 1][j2 + 2] == 'n')
+                || (pole[i2 - 1][j2 - 2] == 'n')
+                || (pole[i2 + 2][j2 + 1] == 'n')
+                || (pole[i2 + 2][j2 - 1] == 'n')
+                || (pole[i2 - 2][j2 + 1] == 'n')
+                || (pole[i2 - 2][j2 - 1] == 'n')) {
                 d = 0;
             }
             break;
+        ///êîðîëü///////////////////
         case 5:
             for (f = -1; f < 2; f++) {
                 for (v = -1; v < 2; v++) {
@@ -1120,12 +1135,14 @@ int AttackArea(int team, int area, int i2, int j2, char pole[][9])
 
     case 1:
         switch (area) {
+        ///ïåøêà///////////////////////
         case 1:
             if ((pole[i2 + 1][j2 - 1] == 'P')
                 || (pole[i2 + 1][j2 + 1] == 'P')) {
                 d = 0;
             }
             break;
+        ///ëàäüÿ+êîðîëåâà////////
         case 2:
             v = j2;
             do {
@@ -1156,6 +1173,7 @@ int AttackArea(int team, int area, int i2, int j2, char pole[][9])
                 }
             } while (pole[v][j2] == ' ');
             break;
+        ///ñëîí+êîðîëåâà///////////
         case 3:
             f = i2;
             v = j2;
@@ -1194,17 +1212,19 @@ int AttackArea(int team, int area, int i2, int j2, char pole[][9])
                 }
             } while (pole[f][v] == ' ');
             break;
+        ///êîíü/////////////////////
         case 4:
             if ((pole[i2 + 1][j2 + 2] == 'N') || (pole[i2 + 1][j2 - 2] == 'N')
-                 (pole[i2 - 1][j2 + 2] == 'N')
-                 (pole[i2 - 1][j2 - 2] == 'N')
-                 (pole[i2 + 2][j2 + 1] == 'N')
-                 (pole[i2 + 2][j2 - 1] == 'N')
-                (pole[i2 - 2][j2 + 1] == 'N')
-                 (pole[i2 - 2][j2 - 1] == 'N')) {
+                || (pole[i2 - 1][j2 + 2] == 'N')
+                || (pole[i2 - 1][j2 - 2] == 'N')
+                || (pole[i2 + 2][j2 + 1] == 'N')
+                || (pole[i2 + 2][j2 - 1] == 'N')
+                || (pole[i2 - 2][j2 + 1] == 'N')
+                || (pole[i2 - 2][j2 - 1] == 'N')) {
                 d = 0;
             }
             break;
+        ///êîðîëü///////////////////
         case 5:
             for (f = -1; f < 2; f++) {
                 for (v = -1; v < 2; v++) {
@@ -1219,6 +1239,7 @@ int AttackArea(int team, int area, int i2, int j2, char pole[][9])
     }
     return d;
 }
+
 int FriendlyFire(int side, int i2, int j2, char pole[][9])
 {
     int d = 1;

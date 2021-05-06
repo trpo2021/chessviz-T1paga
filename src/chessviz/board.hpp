@@ -16,4 +16,3 @@ int FriendlyFire(int side, int i2, int j2, char pole[][9]);
 int AttackArea(int team, int area, int i2, int j2, char pole[][9]);
 
 #endif
-
