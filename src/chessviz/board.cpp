@@ -1242,7 +1242,7 @@ int AttackArea(int team, int area, int i2, int j2, char pole[][9])
 
 int FriendlyFire(int side, int i2, int j2, char pole[][9])
 {
-    int d = 0;
+    int d = 1;
     switch (side) {
     case 0:
         if ((pole[i2][j2] == 'P') || (pole[i2][j2] == 'R')
@@ -1250,7 +1250,7 @@ int FriendlyFire(int side, int i2, int j2, char pole[][9])
             || (pole[i2][j2] == 'Q') || (pole[i2][j2] == 'K')) {
             cout << "\n ERROR: You can't move your figure on your figures \n "
                     "\n";
-            d = 1;
+            d = 0;
         }
         break;
     case 1:
@@ -1259,7 +1259,7 @@ int FriendlyFire(int side, int i2, int j2, char pole[][9])
             || (pole[i2][j2] == 'q') || (pole[i2][j2] == 'k')) {
             cout << "\n ERROR: You can't move your figure on your figures \n "
                     "\n";
-            d = 1;
+            d = 0;
         }
         break;
     }
