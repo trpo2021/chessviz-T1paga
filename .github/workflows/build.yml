@@ -8,9 +8,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Check codestyle
-        run: git ls-files *.{c,cpp,h,hpp} | xargs clang-format -i --verbose && git diff --exit-code
         
       - name: Build application
         run: make
@@ -20,3 +17,6 @@ jobs:
         
       - name: Run test
         run: ./bin/chessviz_test
+        
+      - name: Check codestyle
+        run: git ls-files *.{c,cpp,h,hpp} | xargs clang-format -i --verbose && git diff --exit-code
