@@ -1,6 +1,4 @@
 #pragma once
-#ifndef BOARD_HPP
-#define BOARD_HPP
 #include <iomanip>
 #include <iostream>
 #include <stdio.h>
