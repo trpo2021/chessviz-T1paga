@@ -13,10 +13,10 @@ int main()
                {'1', 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
                {' ', 'a', '6', 'c', 'd', 'e', 'f', 'g', 'h'}};
     int team = 0;
-    ChessField(pole);
+    Chess_Field(pole);
     while (true) {
         Move(pole, &team);
-        ChessField(pole);
+        Chess_Field(pole);
     }
     return 0;
 }
